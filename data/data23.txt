@@ -1,0 +1,29 @@
+Hướng dẫn kiểm tra điều kiện tốt nghiệp
+Hướng dẫn kiểm tra điều kiện tốt nghiệp
+ 
+Để tạo điều kiện thuận lợi giúp các bạn sinh viên có thể kiểm tra điều kiện xét tốt nghiệp của sinh viên trước khi xét tốt nghiệp hoặc xét tốt nghiệp không thành công, các bạn sử dụng chức năng Kiểm tra điều kiện tốt nghiệp trên trang
+“http://ctt-daotao.hust.edu.vn”
+Bước 1:
+Các bạn đăng nhập vào hệ thống trên trang http://ctt-daotao.hust.edu.vn
+
+Bước 2: Chọn phần “Chương trình đào tạo” trong mục Thông tin đào tạo
+ 
+
+Bước 3: Click chọn “Chương trình đào tạo sinh viên”
+
+
+Trong mục này các bạn có 3 sự lựa chọn:
+1.Chọn “Các môn trong chương trình đào tạo” để xem các học phần nằm trong chương trình đào tạo của mình
+2.Phần điều kiện tốt nghiệp: Giúp các bạn xem được các định hướng tốt nghiệp của mình để lựa chọn định hướng xét tốt nghiệp theo đúng chương trình của mình đang học cho phù hợp.
+
+ 
+Kiểm tra điều kiện tốt nghiệp: đây là chức năng giúp các bạn tự kiểm tra xem mình có đủ điều kiện xét tốt nghiệp theo các định hướng lựa chọn hay không.
+
+
+Khi chọn mục này các bạn sẽ được đưa ra các định hướng kiểm tra điều kiện tốt nghiệp để kiểm tra chương trình học của mình phù hợp với điều kiện xét tốt nghiệp nào.
+Khi các bạn xác định rõ định hướng học của mình thì các bạn có thể kiểm tra chính xác cụ thể điều kiện xét tốt nghiệp.
+
+
+
+Phần kết quả việc xét tốt nghiệp sẽ được thông báo Kết quả bên dưới. Các bạn dựa vào đó để xem mình còn thiếu điều kiện gì khi thực hiện việc xét tốt nghiệp.
+ 

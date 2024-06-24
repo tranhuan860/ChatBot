@@ -1,0 +1,27 @@
+Hướng dẫn quy trình thực hiện một số thủ tục thường gặp
+Cập nhật: 05:49 19/09/2022
+1. Hướng dẫn đăng ký học tập: Xem tại https://ctt.hust.edu.vn/DisplayWeb/DisplayBaiViet?baiviet=6129.
+
+2. Hướng dẫn đăng ký lớp cho sinh viên hệ đào tạo quốc tế SIE: Xem tại https://ctt.hust.edu.vn/DisplayWeb/DisplayBaiViet?baiviet=35630.
+
+3. Hướng dẫn tra cứu điểm kỳ mới nhất để phục vụ công tác phúc tra:
+Triển khai chức năng "Tra cứ điểm kỳ mới nhất" để phục vụ công tác phúc tra
+PHÒNG ĐÀO TẠO THÔNG BÁO VỀ VIỆC TRIỂN KHAI CHỨC NĂNG “TRA CỨU ĐIỂM KỲ MỚI NHẤT”
+
+Chức năng: Tra cứu điểm môn học để phục vụ phúc tra điểm kỳ hiện tại
+Sinh viên đăng nhập trang https://ctt-daotao.hust.edu.vn/ --> Kết quả học tập --> Kiểm tra nhập điểm kỳ mới nhất
+Nếu có thắc mắc về điểm số trong thời gian Phúc tra (do Viện giảng dạy quy định) sinh viên thực hiện quy trình thắc mắc phúc tra điểm theo yêu cầu của Viện.
+
+
+4. Hướng dẫn thủ tục cấp bản sao bằng tốt nghiệp: Xem tại đây.
+Quy định về đề nghị cấp bản sao bằng tốt nghiệp
+Hướng dẫn thủ tục đề nghị cấp bản sao bằng tốt nghiệp Đại học
+
+Xin cấp bản sao bằng cần phải có :
+
+- Phải có giấy tường trình việc mất bằng Đại học (có xác nhận của công an).
+- Xuất trình Chứng minh nhân dân
+
+Chú ý: trong giấy tường trình phải ghi rõ đầy đủ thông tin trong văn bằng bị thất lạc.
+
+Thời gian nhận lại bản sao: Sau khi nộp giấy tờ 3 ngày, tại: nhà C1 phòng 202A – Bàn số 7
