@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatHust</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      /* Reset CSS */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Font family */
+      body,
+      input,
+      button {
+        font-family: "Roboto", sans-serif;
+      }
+
+      /* Main container */
+      .chat-container {
+        width: 100%;
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      /* Chat header */
+      .chat-header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: 1px solid #ddd;
+      }
+
+      /* Chat body */
+      .chat-body {
+        padding: 20px;
+        height: 400px;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #007bff #f0f0f0;
+      }
+
+      /* Chat messages */
+      .chat-message {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .user-message,
+      .bot-message {
+        padding: 10px 15px;
+        border-radius: 20px;
+        max-width: 70%;
+        word-wrap: break-word;
+        white-space: pre-wrap; /* Allow new lines and spaces */
+        font-size: 14px;
+      }
+
+      .user-message {
+        background-color: #007bff;
+        color: #fff;
+        border-top-right-radius: 0;
+        margin-left: auto;
+      }
+
+      .bot-message {
+        background-color: #f9f9f9;
+        color: #333;
+        border-top-left-radius: 0;
+        margin-right: auto;
+      }
+
+      /* Chat input */
+      .chat-input {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-top: 1px solid #ddd;
+      }
+
+      .chat-input input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        background-color: #f9f9f9;
+        border-radius: 30px;
+        font-size: 14px;
+        outline: none;
+      }
+
+      .chat-input button {
+        margin-left: 10px;
+        padding: 10px 20px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+      }
+
+      .chat-input button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Scrollbar customization */
+      .chat-body::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .chat-body::-webkit-scrollbar-track {
+        background-color: #f0f0f0;
+      }
+
+      .chat-body::-webkit-scrollbar-thumb {
+        background-color: #007bff;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">ChatHust</div>
+      <div class="chat-body" id="chat-box">
+        <div class="bot-message">
+          Xin chào! Hãy nhập tin nhắn của bạn để bắt đầu trò chuyện.
+        </div>
+      </div>
+      <div class="chat-input">
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Nhập tin nhắn của bạn..."
+        />
+        <button onclick="sendMessage()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+    <script>
+      // Function to send user message and show bot is typing message
+      function sendMessage() {
+        var userMessage = document.getElementById("user-input").value;
+        if (userMessage.trim() === "") {
+          return; // Do not send if input is empty
+        }
+
+        var chatBox = document.getElementById("chat-box");
+        var userMessageElement =
+          '<div class="chat-message"><div class="user-message">' +
+          userMessage +
+          "</div></div>";
+        var botTypingElement =
+          '<div class="chat-message bot-typing"><div class="bot-message">Đang tìm kiếm câu trả lời...</div></div>';
+
+        // Add user message and bot typing message to chat
+        chatBox.innerHTML += userMessageElement + botTypingElement;
+        chatBox.scrollTop = chatBox.scrollHeight; // Auto scroll to bottom
+        document.getElementById("user-input").value = ""; // Clear input
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/ask", true);
+        xhr.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+            var botResponse = xhr.responseText;
+
+            // Remove bot typing message
+            var typingElements = document.getElementsByClassName("bot-typing");
+            while (typingElements[0]) {
+              typingElements[0].parentNode.removeChild(typingElements[0]);
+            }
+
+            // Add bot response to chat
+            var botMessageElement =
+              '<div class="chat-message"><div class="bot-message">' +
+              botResponse +
+              "</div></div>";
+            chatBox.innerHTML += botMessageElement;
+            chatBox.scrollTop = chatBox.scrollHeight; // Auto scroll to bottom
+          }
+        };
+        xhr.send("user_message=" + encodeURIComponent(userMessage));
+      }
+
+      // Handle Enter key press to send message
+      document
+        .getElementById("user-input")
+        .addEventListener("keyup", function (event) {
+          if (event.key === "Enter") {
+            sendMessage();
+          }
+        });
+    </script>
+  </body>
+</html>
